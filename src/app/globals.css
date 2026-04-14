@@ -1,26 +1,97 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light Mode - iOS 18 */
+  --ios-bg: #F2F2F7;
+  --ios-surface: #FFFFFF;
+  --ios-surface-secondary: #F2F2F7;
+  --ios-text-primary: #000000;
+  --ios-text-secondary: #8E8E93;
+  --ios-text-tertiary: #C7C7CC;
+  --ios-separator: #E5E5EA;
+  --ios-accent: #007AFF;
+  --ios-accent-secondary: #5856D6;
+  --ios-green: #34C759;
+  --ios-orange: #FF9500;
+  --ios-red: #FF3B30;
+  --ios-yellow: #FFCC00;
+  --ios-purple: #AF52DE;
+  --ios-teal: #5AC8FA;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  /* Dark Mode - iOS 18 Deep Black */
+  --ios-bg: #000000;
+  --ios-surface: #1C1C1E;
+  --ios-surface-secondary: #2C2C2E;
+  --ios-text-primary: #FFFFFF;
+  --ios-text-secondary: #8E8E93;
+  --ios-text-tertiary: #48484A;
+  --ios-separator: #38383A;
+  --ios-accent: #0A84FF;
+  --ios-accent-secondary: #5E5CE6;
+  --ios-green: #30D158;
+  --ios-orange: #FF9F0A;
+  --ios-red: #FF453A;
+  --ios-yellow: #FFD60A;
+  --ios-purple: #BF5AF2;
+  --ios-teal: #64D2FF;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-ios-separator;
+  }
+  
+  html {
+    @apply antialiased;
+  }
+  
+  body {
+    @apply bg-ios-bg text-ios-text-primary min-h-screen;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-ios-accent to-ios-accent-secondary;
+  }
+}
+
+/* Leaflet Map Customization */
+.leaflet-container {
+  font-family: inherit;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ios-text-tertiary);
+  border-radius: 3px;
+}
+
+/* Selection */
+::selection {
+  background: var(--ios-accent);
+  color: white;
 }
