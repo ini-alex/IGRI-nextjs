@@ -47,9 +47,9 @@ export function StatsSection({ quakes }: StatsSectionProps) {
       .sort((a, b) => b[1] - a[1])[0]?.[0] || "-";
 
     // Animate numbers
-    animateValue("stat-total", total, setStats);
-    animateValue("stat-max", maxMag, setStats, (v) => v.toFixed(1));
-    animateValue("stat-avg", parseFloat(avgMag), setStats, (v) => v.toFixed(1));
+    animateValue("total", total, setStats);
+    animateValue("max", maxMag, setStats, (v) => v.toFixed(1));
+    animateValue("avg", parseFloat(avgMag), setStats, (v) => v.toFixed(1));
 
     setStats((prev) => ({ ...prev, region: mostActiveRegion }));
   }, [quakes]);
@@ -100,7 +100,7 @@ export function StatsSection({ quakes }: StatsSectionProps) {
         {statItems.map((item, i) => (
           <div
             key={i}
-            className="bg-ios-surface rounded-ios-lg p-4 shadow-ios-sm flex flex-col active:scale-96 transition-transform"
+            className="bg-ios-surface rounded-ios-lg p-4 shadow-ios-sm flex flex-col active:scale-95 transition-transform"
           >
             <div className={`w-10 h-10 rounded-ios-md bg-ios-surface-secondary flex items-center justify-center mb-2 ${item.color}`}>
               <item.icon className="w-5 h-5" />

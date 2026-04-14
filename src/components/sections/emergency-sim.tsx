@@ -62,7 +62,7 @@ export function EmergencySim() {
         <h2 className="text-xl font-bold mb-4 px-1 text-ios-text-primary">Simulasi Darurat</h2>
         <button
           onClick={startSimulation}
-          className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-ios-red to-[#FF6B6B] text-white rounded-ios-xl active:scale-98 transition-transform shadow-lg shadow-ios-red/20"
+          className="w-full flex items-center gap-4 p-4 bg-gradient-to-r from-ios-red to-[#FF6B6B] text-white rounded-ios-xl active:scale-95 transition-transform shadow-lg shadow-ios-red/20"
         >
           <div className="w-12 h-12 rounded-ios-md bg-white/20 flex items-center justify-center">
             <Bell className="w-6 h-6" />
@@ -83,10 +83,10 @@ export function EmergencySim() {
         )}
       >
         <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={stopAlert} />
-        <div className="relative bg-ios-surface rounded-ios-xl p-8 mx-5 text-center max-w-[320px] animate-modal-up">
+        <div className="relative bg-ios-surface rounded-ios-xl p-8 mx-5 text-center max-w-[320px] animate-[modalUp_0.4s_ease-out]">
           <div className="w-24 h-24 mx-auto mb-5 relative flex items-center justify-center">
-            <div className="absolute inset-0 bg-ios-red/30 rounded-full animate-siren" />
-            <Bell className="w-12 h-12 text-ios-red animate-bell-shake" />
+            <div className="absolute inset-0 bg-ios-red/30 rounded-full animate-[sirenPulse_1s_infinite]" />
+            <Bell className="w-12 h-12 text-ios-red animate-[bellShake_0.5s_infinite]" />
           </div>
           <h2 className="text-2xl font-extrabold mb-3 text-ios-text-primary">🚨 SIMULASI ALARM</h2>
           <p className="text-[15px] text-ios-text-secondary mb-6 leading-relaxed">
@@ -94,7 +94,7 @@ export function EmergencySim() {
           </p>
           <button
             onClick={stopAlert}
-            className="w-full py-3.5 bg-ios-accent text-white rounded-ios-lg font-semibold active:scale-96 transition-transform"
+            className="w-full py-3.5 bg-ios-accent text-white rounded-ios-lg font-semibold active:scale-95 transition-transform"
           >
             Matikan Alarm
           </button>

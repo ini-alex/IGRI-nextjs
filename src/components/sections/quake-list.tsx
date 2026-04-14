@@ -173,7 +173,7 @@ export function QuakeList({ latestQuake, feltQuakes, majorQuakes }: QuakeListPro
 
           <Link
             href={`/gempa/${encodeURIComponent(latestQuake.DateTime)}`}
-            className="mt-5 flex items-center justify-center gap-2 w-full py-3.5 bg-ios-accent text-white rounded-ios-lg font-semibold active:scale-96 transition-transform"
+            className="mt-5 flex items-center justify-center gap-2 w-full py-3.5 bg-ios-accent text-white rounded-ios-lg font-semibold active:scale-95 transition-transform"
           >
             <span>Lihat Detail</span>
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

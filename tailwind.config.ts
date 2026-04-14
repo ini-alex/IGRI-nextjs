@@ -1,12 +1,12 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -31,31 +31,19 @@ const config: Config = {
         },
       },
       borderRadius: {
-        ios: {
-          sm: "8px",
-          md: "12px",
-          lg: "16px",
-          xl: "20px",
-          full: "9999px",
-        },
+        'ios-sm': '8px',
+        'ios-md': '12px',
+        'ios-lg': '16px',
+        'ios-xl': '20px',
+        'ios-full': '9999px',
       },
       boxShadow: {
-        ios: {
-          sm: "0 1px 3px rgba(0,0,0,0.1)",
-          md: "0 4px 20px rgba(0,0,0,0.08)",
-          lg: "0 10px 40px rgba(0,0,0,0.12)",
-        },
+        'ios-sm': '0 1px 3px rgba(0,0,0,0.1)',
+        'ios-md': '0 4px 20px rgba(0,0,0,0.08)',
+        'ios-lg': '0 10px 40px rgba(0,0,0,0.12)',
       },
       fontFamily: {
         sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "SF Pro Text", "sans-serif"],
-      },
-      animation: {
-        "ios-spring": "iosSpring 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
-        "pulse-dot": "pulseDot 2s infinite",
-        "slide-down": "slideDown 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
-        "skeleton": "skeletonShimmer 1.5s infinite",
-        "siren": "sirenPulse 1s infinite",
-        "bell-shake": "bellShake 0.5s infinite",
       },
       keyframes: {
         iosSpring: {
@@ -83,9 +71,24 @@ const config: Config = {
           "25%": { transform: "rotate(-15deg)" },
           "75%": { transform: "rotate(15deg)" },
         },
+        modalUp: {
+          from: { opacity: "0", transform: "translateY(50px) scale(0.9)" },
+          to: { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
+        fadeIn: {
+          from: { opacity: "0", transform: "translateY(10px)" },
+          to": { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        "ios-spring": "iosSpring 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)",
+        "pulse-dot": "pulseDot 2s infinite",
+        "slide-down": "slideDown 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)",
+        skeleton: "skeletonShimmer 1.5s infinite",
       },
     },
   },
   plugins: [],
 };
+
 export default config;

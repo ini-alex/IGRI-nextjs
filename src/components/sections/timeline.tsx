@@ -19,7 +19,7 @@ export function Timeline({ quakes }: TimelineProps) {
           return (
             <div
               key={quake.DateTime}
-              className="flex flex-col items-center min-w-[70px] text-center animate-fade-in"
+              className="flex flex-col items-center min-w-[70px] text-center animate-[fadeIn_0.4s_ease-out]"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               <div
